@@ -12,7 +12,7 @@ For this project you need to have **Python >= 3.5** and the following list of pr
 * grep
 * openssl
 
-Usually this programs come preinstalled in the linux distributions but in case you need to install them you can use the following commands:
+Usually this programs come preinstalled in various linux distributions, but in case you need to install them you can use the following commands:
 
 #### For CentOS, RHEL, Fedora
 ~~~
@@ -35,7 +35,7 @@ sudo usermod -a -G shadow <your_username>
 Installation
 ------------
 ~~~
-pip3 install linux-shadow-authentication
+pip3 install linux_shadow_authentication
 ~~~
 
 
@@ -44,5 +44,5 @@ Usage
 Once installed you can import the module in your programs
 
 ```python
-import linux-shadow-authentication as lsa
+import linux_shadow_authentication as lsa
 ``` 
