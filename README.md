@@ -32,7 +32,6 @@ Installation
 pip3 install pam_linux
 ~~~
 
-~~~
 
 Usage
 ------------

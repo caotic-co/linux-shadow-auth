@@ -15,7 +15,7 @@ print()
 
 
 setup(
-    name="pam-linux",
+    name="pam_linux",
     version="0.1",
     author="Camilo A. Ospina A.",
     author_email="camilo.ospinaa@gmail.com",
