@@ -1,14 +1,8 @@
-from linux_shadow_authentication._internal.enums import (
-    Algorithm
-)
-
-from linux_shadow_authentication._internal.functions import (
+from shadow_auth._internal import (
+    Algorithm,
     validate_system_user_with_hash,
     validate_system_user_with_string_password,
-    generate_openssl_hash
-)
-
-from linux_shadow_authentication._internal.exceptions import (
+    generate_openssl_hash,
     PrerequisiteException,
     InvalidArgumentType,
     InvalidArgumentFormat

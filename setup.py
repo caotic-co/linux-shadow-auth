@@ -3,10 +3,10 @@ from setuptools import find_packages, setup
 full_description = '''\
 This is a Python module to validate the credentials of a Linux user using the /etc/shadow file.
 
-Please take a look at the full documentation for how to install and use linux_shadow_authentication:    
+Please take a look at the full documentation for how to install and use shadow_auth:    
 * GitHub page: <https://github.com/ospinakamilo/linux_shadow_authentication/>
 
-How to use linux_shadow_authentication:
+How to use Linux Shadow Authentication:
 ```python
 print()
 ```  
@@ -15,7 +15,7 @@ print()
 
 
 setup(
-    name="linux_shadow_authentication",
+    name="shadow_auth",
     version="0.1",
     author="Camilo A. Ospina A.",
     author_email="camilo.ospinaa@gmail.com",
@@ -23,7 +23,7 @@ setup(
     long_description=full_description,
     long_description_content_type='text/markdown',
     url="https://github.com/ospinakamilo/linux_shadow_authentication/",
-    keywords='linux_shadow_authentication linux authentication credentials shadow passwd pam',
+    keywords='shadow_auth linux authentication credentials shadow passwd pam',
     classifiers=[
         "Intended Audience :: Developers",
         "Programming Language :: Python :: 3",

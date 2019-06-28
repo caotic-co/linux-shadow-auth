@@ -1,7 +1,7 @@
 """This script contains all the classes related to the module"""
 
-from linux_shadow_authentication._internal.enums import Algorithm
-from linux_shadow_authentication._internal.exceptions import (
+from shadow_auth._internal.enums import Algorithm
+from shadow_auth._internal.exceptions import (
     # Exceptions
     InvalidArgumentType,
     InvalidArgumentFormat,

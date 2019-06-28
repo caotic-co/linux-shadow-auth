@@ -4,7 +4,7 @@ import os
 from sys import platform
 from shutil import which
 from typing import Callable
-from linux_shadow_authentication._internal.exceptions import (
+from shadow_auth._internal.exceptions import (
     # Exceptions
     PrerequisiteException,
     InvalidArgumentType,

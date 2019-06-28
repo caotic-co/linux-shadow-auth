@@ -1,13 +1,13 @@
 """This script contains the main authentication and hash generation functions"""
 
 import subprocess
-from linux_shadow_authentication._internal.classes import ShadowHash
-from linux_shadow_authentication._internal.enums import Algorithm
-from linux_shadow_authentication._internal.validations import (
+from shadow_auth._internal.classes import ShadowHash
+from shadow_auth._internal.enums import Algorithm
+from shadow_auth._internal.validations import (
     validate_system_requirements_first
 )
 
-from linux_shadow_authentication._internal.exceptions import (
+from shadow_auth._internal.exceptions import (
     # Exceptions
     InvalidArgumentType,
 
