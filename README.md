@@ -13,7 +13,7 @@ For this project you need to have **Python >= 3.5** and the following list of pr
 * openssl
 * passwd
 
-Usually this programs come preinstalled in various linux distributions, but in case you need to install them you can use the following commands:
+Usually these programs come preinstalled in various linux distributions, but in case you need to install them you can use the following commands:
 
 #### For CentOS, RHEL, Fedora
 ~~~
