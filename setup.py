@@ -1,12 +1,12 @@
 from setuptools import find_packages, setup
 
 full_description = '''\
-This is a Python module to validate the credentials of a Linux user using the Pluggable Authentication Modules (PAM)
+This is a Python module to validate the credentials of a Linux user using the /etc/shadow file.
 
-Please take a look at the full documentation for how to install and use pam-linux:    
-* GitHub page: <https://github.com/ospinakamilo/pam-linux/>
+Please take a look at the full documentation for how to install and use linux_shadow_authentication:    
+* GitHub page: <https://github.com/ospinakamilo/linux_shadow_authentication/>
 
-How to use pam-linux:
+How to use linux_shadow_authentication:
 ```python
 print()
 ```  
@@ -15,15 +15,15 @@ print()
 
 
 setup(
-    name="pam_linux",
+    name="linux_shadow_authentication",
     version="0.1",
     author="Camilo A. Ospina A.",
     author_email="camilo.ospinaa@gmail.com",
-    description="Python module to validate the credentials of a Linux user using the Pluggable Authentication Modules (PAM)",
+    description="Python module to validate the credentials of a Linux user using the /etc/shadow file",
     long_description=full_description,
     long_description_content_type='text/markdown',
-    url="https://github.com/ospinakamilo/pam-linux/",
-    keywords='pam-linux pam linux authentication credentials shadow passwd',
+    url="https://github.com/ospinakamilo/linux_shadow_authentication/",
+    keywords='linux_shadow_authentication linux authentication credentials shadow passwd pam',
     classifiers=[
         "Intended Audience :: Developers",
         "Programming Language :: Python :: 3",

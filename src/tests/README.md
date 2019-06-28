@@ -1,3 +1,10 @@
+Unit Testing
+------------
+To run the unit tests for the source code go the 'src' folder of the cloned project "linux_shadow_authentication/src/" and run
+~~~
+python3 -m unittest discover ./tests
+~~~
+
 Manual Install
 ------------
 Install the Dependencies
@@ -9,7 +16,7 @@ sudo python3 -m pip install --user --upgrade twine
 
 Clone the repository using the following command:
 ~~~
-git clone https://github.com/ospinakamilo/pam_linux
+git clone https://github.com/ospinakamilo/linux_shadow_authentication
 ~~~
 
 In the location where you cloned the repository run the next command:
@@ -19,12 +26,6 @@ python3 setup.py sdist bdist_wheel
 This will create a folder called 'dist' which contains the module to install.
 To install the module in your local system use the following command (be sure to validate the version number in the file):
 ~~~
-python3 -m pip install dist/pam_linux-x.x-py3-none-any.whl
+python3 -m pip install dist/linux_shadow_authentication-x.x-py3-none-any.whl
 ~~~
 
-Unit Testing
-------------
-To run the unit tests for the source code go the 'src' folder of the cloned project "pam_linux/src/" and run
-~~~
-python3 -m unittest discover ./tests
-~~~

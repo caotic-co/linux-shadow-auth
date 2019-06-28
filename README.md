@@ -11,16 +11,17 @@ For this project you need to have **Python >= 3.5** and the following list of pr
 * cat
 * grep
 * openssl
+* passwd
 
 Usually this programs come preinstalled in various linux distributions, but in case you need to install them you can use the following commands:
 
 #### For CentOS, RHEL, Fedora
 ~~~
-sudo yum install coreutils grep openssl
+sudo yum install coreutils grep openssl passwd
 ~~~
 #### For Debian, Ubuntu, Linux Mint
 ~~~
-sudo apt install coreutils grep openssl
+sudo apt install coreutils grep openssl passwd
 ~~~
 Linux Permissions
 ------------
