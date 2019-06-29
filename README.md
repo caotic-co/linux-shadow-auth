@@ -88,5 +88,5 @@ or reboot, in order for the changes to have effect.
 Installation
 ------------
 ~~~
-pip3 install linux-shadow-auth
+pip3 install shadow-auth
 ~~~
