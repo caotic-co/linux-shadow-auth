@@ -109,6 +109,6 @@ def validate_system_requirements_first(func: Callable) -> Callable:
         check_cat_is_installed()
         check_grep_is_installed()
         check_openssl_is_installed()
-        func(*args, **kwargs)
+        return func(*args, **kwargs)
     return func_wrapper
 

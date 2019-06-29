@@ -4,12 +4,12 @@ full_description = '''\
 This is a Python module to validate the credentials of a Linux user using the /etc/shadow file.
 
 Please take a look at the full documentation for how to install and use shadow_auth:    
-* GitHub page: <https://github.com/ospinakamilo/linux_shadow_authentication/>
+* GitHub page: <https://github.com/ospinakamilo/linux-shadow-auth/>
 
 How to use Linux Shadow Authentication:
 ```python
-print()
-```  
+import shadow_auth
+``` 
 
 '''
 
@@ -22,7 +22,7 @@ setup(
     description="Python module to validate the credentials of a Linux user using the /etc/shadow file",
     long_description=full_description,
     long_description_content_type='text/markdown',
-    url="https://github.com/ospinakamilo/linux_shadow_authentication/",
+    url="https://github.com/ospinakamilo/linux-shadow-auth/",
     keywords='shadow_auth linux authentication credentials shadow passwd pam',
     classifiers=[
         "Intended Audience :: Developers",

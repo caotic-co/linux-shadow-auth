@@ -29,14 +29,17 @@ For this module to work your user requires access to the shadow group.
 To do so you can execute the following command:
 
 ~~~
-sudo usermod -a -G shadow <your_username>
+sudo usermod -a -G shadow <username>
 ~~~
+
+If you are logged as the user that is going to be added to the group you might have to log out and log in again,
+or reboot, in order for the changes to have effect.
 
 
 Installation
 ------------
 ~~~
-pip3 install linux_shadow_authentication
+pip3 install linux-shadow-auth
 ~~~
 
 
@@ -45,5 +48,5 @@ Usage
 Once installed you can import the module in your programs
 
 ```python
-import linux_shadow_authentication as lsa
+import shadow_auth
 ``` 

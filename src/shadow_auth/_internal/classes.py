@@ -9,8 +9,7 @@ from shadow_auth._internal.exceptions import (
     # Exception Messages
     MESSAGE_GENERIC_INVALID_TYPE,
     MESSAGE_INVALID_HASH_FORMAT,
-    MESSAGE_INVALID_SHADOW_FILE_HASH_TYPE,
-    MESSAGE_INVALID_ALGORITHM_IN_HASH
+    MESSAGE_INVALID_SHADOW_FILE_HASH_TYPE
 )
 
 
@@ -18,7 +17,7 @@ class ShadowHash:
     """
     Provide and easy access to the different components of the hashed stored in the shadow file.
     """
-    algorithm: Algorithm = None
+    algorithm: str = None
     salt: str = None
     hash: str = None
 
@@ -36,10 +35,7 @@ class ShadowHash:
         if len(_hash_list) != 4:
             raise InvalidArgumentFormat(MESSAGE_INVALID_HASH_FORMAT)
 
-        if _hash_list[1] not in [enum.value for enum in Algorithm]:
-            raise InvalidArgumentFormat(MESSAGE_INVALID_ALGORITHM_IN_HASH)
-
-        self.algorithm = Algorithm(_hash_list[1])
+        self.algorithm = _hash_list[1]
         self.salt = _hash_list[2]
         self.hash = _hash_list[3]
 
