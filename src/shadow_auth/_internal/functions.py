@@ -84,7 +84,7 @@ def _generate_fake_user_hash(username: str) -> str:
         else:
             salt_text = salt_text + chr(97 + char_num)
 
-    return _generate_openssl_hash(algorithm=Algorithm.MD5, salt=salt_text, text=salt_text)
+    return _generate_openssl_hash(algorithm=Algorithm.SHA_512, salt=salt_text, text=salt_text)
 
 
 def _get_user_password_hash_from_shadow_file(username: str) -> str:
@@ -131,10 +131,11 @@ def generate_openssl_hash(algorithm: Algorithm, salt: str, text: str) -> str:
 
 
 @validate_system_requirements_first
-def validate_user_with_hash(username: str, hashed_password: str) -> bool:
+def validate_with_hash(username: str, hashed_password: str) -> bool:
     """
     Validates the given credentials for a user in the system using a hashed password.
-    If the user does not exist a fake result is returned as a safety measure.
+    A random hash is used to compare the provided hash as a safety measure if the user does not exist,
+    has a blank password, or the account is disabled.
 
     :param username: The user to be validated in the system
     :param hashed_password: The password hash to be used to compare the credentials
@@ -147,18 +148,22 @@ def validate_user_with_hash(username: str, hashed_password: str) -> bool:
     if not isinstance(hashed_password, str):
         raise InvalidArgumentType(MESSAGE_INVALID_HASHED_PASSWORD_TYPE)
 
+    if len(hashed_password.split("$")) != 4:
+        return False
+
     user_hash = _get_user_password_hash_from_shadow_file(username)
-    if "$" not in user_hash:
+    if (user_hash == "") or ("!" in user_hash) or ("*" in user_hash) or ("$" not in user_hash):
         user_hash = _generate_random_openssl_hash()
     shadow_object = ShadowHash(hashed_password)
     return shadow_object.equals(user_hash)
 
 
 @validate_system_requirements_first
-def validate_user_with_string_password(username: str, password: str) -> bool:
+def validate_with_password(username: str, password: str) -> bool:
     """
     Validates the given credentials for a user in the system using a string password.
-    If the user does not exist a fake result is returned as a safety measure.
+    A random hash is used to compare the provided password as a safety measure if the user does not exist,
+    has a blank password, or the account is disabled.
 
     :param username: The user to be validated in the system
     :param password: The password to be used to compare the credentials
@@ -171,7 +176,7 @@ def validate_user_with_string_password(username: str, password: str) -> bool:
         raise InvalidArgumentType(MESSAGE_INVALID_PASSWORD_TYPE)
 
     user_hash = _get_user_password_hash_from_shadow_file(username)
-    if "$" not in user_hash:
+    if (user_hash == "") or ("!" in user_hash) or ("*" in user_hash) or ("$" not in user_hash):
         user_hash = _generate_random_openssl_hash()
     shadow_object = ShadowHash(user_hash)
     if shadow_object.algorithm not in [enum.value for enum in Algorithm]:
@@ -184,10 +189,11 @@ def validate_user_with_string_password(username: str, password: str) -> bool:
 
 
 @validate_system_requirements_first
-def get_user_hash_info(username: str) -> dict:
+def get_password_info(username: str) -> dict:
     """
     Returns the type of algorithm and salt of a user.
-    If the user does not exist a fake result is returned as a safety measure.
+    A fake result is returned as a safety measure if the user does not exist,
+    has a blank password, or the account is disabled.
 
     :param username: The user in the system
     :return: {"algorithm": "xxxx", "salt": "xxxx"}
@@ -205,7 +211,7 @@ def get_user_hash_info(username: str) -> dict:
     except subprocess.CalledProcessError:
         user_hash = _generate_fake_user_hash(username)
 
-    if "$" not in user_hash:
+    if (user_hash == "") or ("!" in user_hash) or ("*" in user_hash) or ("$" not in user_hash):
         user_hash = _generate_fake_user_hash(username)
 
     split_hash = user_hash.split("$")

@@ -1,9 +1,9 @@
 from shadow_auth._internal import (
     Algorithm,
-    validate_user_with_hash,
-    validate_user_with_string_password,
+    validate_with_hash,
+    validate_with_password,
     generate_openssl_hash,
-    get_user_hash_info,
+    get_password_info,
     PrerequisiteException,
     InvalidArgumentType,
     InvalidArgumentFormat,
@@ -12,10 +12,10 @@ from shadow_auth._internal import (
 
 __all__ = [
     "Algorithm",
-    "validate_user_with_hash",
-    "validate_user_with_string_password",
+    "validate_with_hash",
+    "validate_with_password",
     "generate_openssl_hash",
-    "get_user_hash_info",
+    "get_password_info",
     "PrerequisiteException",
     "InvalidArgumentType",
     "InvalidArgumentFormat",

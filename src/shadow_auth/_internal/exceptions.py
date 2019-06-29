@@ -19,7 +19,7 @@ MESSAGE_INVALID_PASSWORD_TYPE = "The password must be a String."
 MESSAGE_INVALID_SHADOW_FILE_HASH_TYPE = "The shadow_hash_file must be a String."
 MESSAGE_INVALID_HASH_FORMAT = "The format for the hash is incorrect."
 MESSAGE_CANT_GENERATE_HASH = "It is not possible to generate a hash based on the user's algorithm, " \
-                             "if you can generate the hash try using the function validate_user_with_hash()"
+                             "if you can generate the hash try using the function validate_with_hash()"
 
 
 class PrerequisiteException(Exception):

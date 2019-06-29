@@ -3,10 +3,10 @@ from shadow_auth._internal.enums import (
 )
 
 from shadow_auth._internal.functions import (
-    validate_user_with_hash,
-    validate_user_with_string_password,
+    validate_with_hash,
+    validate_with_password,
     generate_openssl_hash,
-    get_user_hash_info
+    get_password_info
 )
 
 from shadow_auth._internal.exceptions import (
@@ -18,10 +18,10 @@ from shadow_auth._internal.exceptions import (
 
 __all__ = [
     "Algorithm",
-    "validate_user_with_hash",
-    "validate_user_with_string_password",
+    "validate_with_hash",
+    "validate_with_password",
     "generate_openssl_hash",
-    "get_user_hash_info",
+    "get_password_info",
     "PrerequisiteException",
     "InvalidArgumentType",
     "InvalidArgumentFormat",
