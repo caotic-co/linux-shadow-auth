@@ -37,7 +37,7 @@ new_md5_hash = shadow_auth.generate_openssl_hash(
 
 #Generate an SHA-256 hash
 new_sha_256_hash = shadow_auth.generate_openssl_hash(
-    algorithm=shadow_auth.Algorithm.MD5,
+    algorithm=shadow_auth.Algorithm.SHA_256,
     salt="TrOIigLp",
     text="abcd12345",    
 )
@@ -45,7 +45,7 @@ new_sha_256_hash = shadow_auth.generate_openssl_hash(
 
 #Generate an SHA-512 hash
 new_sha_512_hash = shadow_auth.generate_openssl_hash(
-    algorithm=shadow_auth.Algorithm.MD5,
+    algorithm=shadow_auth.Algorithm.SHA_512,
     salt="TrOIigLp",
     text="abcd12345",    
 )
